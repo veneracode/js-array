@@ -1,16 +1,13 @@
+//Функція filterAdults приймає масив об'єктів, що представлє людей (з полями name та age),
+//вам потрібно написати код, який повертає новий масив, який містить лише тих людей, чий вік більше або дорівнює 18.
 function filterAdults(people) {
-  const adultUsers = people.filter(function(element) {
-    return element.age >= 18;
-  });
-  return adultUsers;
+  const adults = [];
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].age >= 18) {
+      adults.push(people[i]);
+    }
+  }
+  return adults;
 }
 
-const people = [
-  { name: "John", age: 21 },
-  { name: "Jane", age: 22 },
-  { name: "Jim", age: 19 },
-  { name: "Jill", age: 18 },
-  { name: "Jack", age: 23 },
-];
-
-console.log(filterAdults(people)); 
+module.exports = filterAdults;
